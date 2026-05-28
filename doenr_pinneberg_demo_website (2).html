@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DÖN'R Pinneberg</title>
+    <meta
+      name="description"
+      content="DÖN'R Pinneberg, Döner, Pide und hausgemachte Soßen in der Berliner Straße 51."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0f0d0a;
+        --bg-soft: #18130f;
+        --card: #211812;
+        --text: #fff7ed;
+        --muted: #d7c4ae;
+        --accent: #ff7a1a;
+        --accent-2: #ffd166;
+        --line: rgba(255, 247, 237, 0.16);
+        --radius: 28px;
+        --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(
+            circle at 18% 0%,
+            rgba(255, 122, 26, 0.18),
+            transparent 34%
+          ),
+          radial-gradient(
+            circle at 84% 16%,
+            rgba(255, 209, 102, 0.12),
+            transparent 30%
+          ),
+          var(--bg);
+        color: var(--text);
+        font-family: Inter, system-ui, sans-serif;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(18px);
+        background: rgba(15, 13, 10, 0.76);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 18px 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #140d08;
+        box-shadow: 0 12px 36px rgba(255, 122, 26, 0.26);
+        font-family: Anton, sans-serif;
+        font-size: 20px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 48px;
+        padding: 0 18px;
+        border-radius: 999px;
+        font-weight: 900;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          background 180ms ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #140d08;
+      }
+      .btn-ghost {
+        border-color: var(--line);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+      }
+
+      main {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 22px 72px;
+      }
+
+      .hero {
+        min-height: 82vh;
+        display: grid;
+        grid-template-columns: 1.04fr 0.96fr;
+        gap: 34px;
+        align-items: center;
+        padding: 54px 0 40px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        width: fit-content;
+        padding: 9px 13px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--accent-2);
+        font-weight: 900;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        line-height: 0.95;
+        font-family: Anton, Impact, sans-serif;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin-top: 24px;
+        font-size: clamp(58px, 9vw, 132px);
+        max-width: 760px;
+      }
+
+      h1 span {
+        color: var(--accent);
+      }
+
+      .lead {
+        margin: 26px 0 0;
+        color: var(--muted);
+        font-size: clamp(17px, 2vw, 22px);
+        line-height: 1.55;
+        max-width: 650px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 32px;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 34px;
+        max-width: 650px;
+      }
+
+      .stat {
+        padding: 18px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.045);
+        border: 1px solid var(--line);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 26px;
+        font-weight: 900;
+        color: var(--accent-2);
+      }
+
+      .stat span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .hero-card {
+        min-height: 650px;
+        border-radius: 44px;
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.82)),
+          linear-gradient(135deg, #2a1a10, #141414);
+        box-shadow: var(--shadow);
+        border: 1px solid var(--line);
+      }
+
+      .hero-card::before {
+        content: "";
+        position: absolute;
+        inset: 20px;
+        border-radius: 34px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        pointer-events: none;
+      }
+
+      .floating-menu {
+        position: absolute;
+        left: 24px;
+        right: 24px;
+        bottom: 24px;
+        display: grid;
+        gap: 12px;
+      }
+
+      .mini-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+        border-radius: 22px;
+        background: rgba(15, 13, 10, 0.78);
+        border: 1px solid var(--line);
+        backdrop-filter: blur(16px);
+      }
+
+      .mini-card b {
+        display: block;
+        font-size: 15px;
+      }
+      .mini-card small {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+      }
+      .price {
+        color: var(--accent-2);
+        font-weight: 900;
+        white-space: nowrap;
+      }
+
+      section {
+        padding: 76px 0 0;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        align-items: end;
+        margin-bottom: 26px;
+      }
+
+      .section-head h2 {
+        font-size: clamp(40px, 6vw, 76px);
+        max-width: 760px;
+      }
+
+      .section-head p {
+        color: var(--muted);
+        max-width: 450px;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .food-card {
+        min-height: 390px;
+        border-radius: var(--radius);
+        overflow: hidden;
+        position: relative;
+        background: var(--card);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .food-card img {
+        width: 100%;
+        height: 245px;
+        object-fit: cover;
+        display: block;
+        filter: saturate(1.06) contrast(1.04);
+      }
+
+      .food-card-content {
+        padding: 20px;
+      }
+      .food-card h3 {
+        font-size: 28px;
+      }
+
+      .food-card p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .tag {
+        padding: 8px 11px;
+        border-radius: 999px;
+        background: rgba(255, 122, 26, 0.12);
+        color: var(--accent-2);
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .menu-board {
+        border-radius: 36px;
+        padding: 28px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 122, 26, 0.12),
+          rgba(255, 255, 255, 0.04)
+        );
+        border: 1px solid var(--line);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .menu-list {
+        background: rgba(0, 0, 0, 0.22);
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        padding: 22px;
+      }
+
+      .menu-list h3 {
+        font-size: 34px;
+        margin-bottom: 18px;
+        color: var(--accent-2);
+      }
+
+      .menu-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 15px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .menu-item:first-of-type {
+        border-top: 0;
+      }
+      .menu-item b {
+        display: block;
+      }
+      .menu-item span {
+        display: block;
+        color: var(--muted);
+        margin-top: 4px;
+        font-size: 14px;
+      }
+
+      .social-layout {
+        display: grid;
+        grid-template-columns: 0.88fr 1.12fr;
+        gap: 18px;
+        align-items: start;
+      }
+
+      .social-card {
+        border-radius: 36px;
+        padding: 28px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 98px;
+      }
+
+      .social-card h3 {
+        font-size: 48px;
+      }
+      .social-card p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .post-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .ig-card {
+        min-height: 285px;
+        border-radius: 28px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .ig-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.78)),
+          var(--post-bg) center/cover;
+        opacity: 0.92;
+        transition: transform 240ms ease;
+      }
+
+      .ig-card:hover::before {
+        transform: scale(1.05);
+      }
+
+      .ig-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .ig-card small {
+        width: fit-content;
+        padding: 8px 11px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.46);
+        color: var(--accent-2);
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .ig-card b {
+        display: block;
+        margin-top: 8px;
+        font-size: 22px;
+        line-height: 1.18;
+      }
+
+      .info-map {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 18px;
+      }
+
+      .info-card,
+      .map-card {
+        border-radius: 36px;
+        overflow: hidden;
+        background: var(--card);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .info-card {
+        padding: 30px;
+      }
+      .info-card h3 {
+        font-size: 44px;
+        margin-bottom: 22px;
+      }
+
+      .info-row {
+        padding: 18px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .info-row:first-of-type {
+        border-top: 0;
+      }
+      .info-row b {
+        display: block;
+        color: var(--accent-2);
+        margin-bottom: 6px;
+      }
+      .info-row span {
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        min-height: 480px;
+        border: 0;
+        display: block;
+        filter: grayscale(0.12) contrast(1.04);
+      }
+
+      .cta {
+        margin-top: 76px;
+        border-radius: 42px;
+        padding: 42px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #140d08;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 26px;
+        align-items: center;
+        box-shadow: 0 30px 100px rgba(255, 122, 26, 0.28);
+      }
+
+      .cta h2 {
+        color: #140d08;
+        font-size: clamp(38px, 6vw, 78px);
+      }
+      .cta p {
+        margin: 14px 0 0;
+        max-width: 720px;
+        font-weight: 800;
+        line-height: 1.55;
+      }
+      .cta .btn {
+        background: #140d08;
+        color: var(--text);
+      }
+
+      footer {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 30px 22px 44px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+      }
+
+      @media (max-width: 940px) {
+        .nav-links {
+          display: none;
+        }
+        .hero,
+        .menu-board,
+        .social-layout,
+        .info-map,
+        .cta {
+          grid-template-columns: 1fr;
+        }
+        .hero-card {
+          min-height: 560px;
+        }
+        .grid-3,
+        .post-grid {
+          grid-template-columns: 1fr;
+        }
+        .section-head {
+          display: block;
+        }
+        .section-head p {
+          margin-top: 14px;
+        }
+        .social-card {
+          position: relative;
+          top: auto;
+        }
+        footer {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .stats {
+          grid-template-columns: 1fr;
+        }
+        .hero-card {
+          min-height: 500px;
+          border-radius: 32px;
+        }
+        .cta,
+        .info-card,
+        .social-card,
+        .menu-board {
+          padding: 24px;
+          border-radius: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a href="#top" class="brand" aria-label="DÖN'R Pinneberg Startseite">
+          <span class="brand-mark">D</span>
+          <span>DÖN'R Pinneberg</span>
+        </a>
+        <div class="nav-links">
+          <a href="#karte">Karte</a>
+          <a href="#standort">Standort</a>
+          <a href="#instagram">Einblicke</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+        <a
+          class="btn btn-primary"
+          href="https://www.instagram.com/doenr_pinneberg/"
+          target="_blank"
+          rel="noreferrer"
+          >Folgen</a
+        >
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Startbereich">
+        <div>
+          <div class="eyebrow">Berliner Straße 51 · Pinneberg</div>
+          <h1>Streetfood, das <span>auffällt</span>.</h1>
+          <p class="lead">
+            DÖN'R bringt modernen Döner Vibe nach Pinneberg. Frisches Brot,
+            starke Soßen, Pide, Tellergerichte und Content, der direkt Appetit
+            macht.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#karte">Karte ansehen</a>
+            <a
+              class="btn btn-ghost"
+              href="https://www.google.com/maps/search/?api=1&query=D%C3%96N%27R%20Berliner%20Str.%2051%2025421%20Pinneberg"
+              target="_blank"
+              rel="noreferrer"
+              >Route planen</a
+            >
+          </div>
+          <div class="stats" aria-label="Kurze Fakten">
+            <div class="stat">
+              <strong>845+</strong><span>Instagram Follower</span>
+            </div>
+            <div class="stat"><strong>X</strong><span>Gerichte</span></div>
+          </div>
+        </div>
+
+        <div
+          class="hero-card"
+          role="img"
+          aria-label="Döner im modernen Streetfood Stil"
+        >
+          <div class="floating-menu">
+            <div class="mini-card">
+              <div>
+                <b>Signature Döner</b
+                ><small>Platzhalter für Produktbild oder Video</small>
+              </div>
+              <span class="price">Top Pick</span>
+            </div>
+            <div class="mini-card">
+              <div>
+                <b>Pide & Specials</b
+                ><small>Platzhalter für Social Media Reel oder Food Shot</small>
+              </div>
+              <span class="price">Featured</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="karte">
+        <div class="section-head">
+          <h2>Die Karte kurz und stark.</h2>
+          <p>
+            Für den Entwurf sind die Kategorien bewusst kompakt gehalten. Die
+            finale Karte kann später direkt aus dem echten Sortiment übernommen
+            werden.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="food-card">
+            <div
+              style="
+                height: 245px;
+                display: grid;
+                place-items: center;
+                background: #2b211a;
+                color: #d7c4ae;
+                font-weight: 800;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+              "
+            >
+              Platzhalter für Döner Bild
+            </div>
+            <div class="food-card-content">
+              <h3>Döner</h3>
+              <p>
+                Im Brot mit Salat und Soße. Dazu die Wahl zwischen Sesam,
+                Brioche und Sauerteigbrot.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Sesam</span><span class="tag">Brioche</span
+                ><span class="tag">Sauerteig</span>
+              </div>
+            </div>
+          </article>
+          <article class="food-card">
+            <div
+              style="
+                height: 245px;
+                display: grid;
+                place-items: center;
+                background: #2b211a;
+                color: #d7c4ae;
+                font-weight: 800;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+              "
+            >
+              Platzhalter für Teller Bild
+            </div>
+            <div class="food-card-content">
+              <h3>Bowl</h3>
+              <p>
+                Döner mit Beilage, Salat und Soße. Sättigend, frisch und ideal,
+                wenn es mehr als ein Snack sein darf.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Beilage</span><span class="tag">Salat</span
+                ><span class="tag">Soße</span>
+              </div>
+            </div>
+          </article>
+          <article class="food-card">
+            <div
+              style="
+                height: 245px;
+                display: grid;
+                place-items: center;
+                background: #2b211a;
+                color: #d7c4ae;
+                font-weight: 800;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+              "
+            >
+              Platzhalter für Pide Bild
+            </div>
+            <div class="food-card-content">
+              <h3>Pide</h3>
+              <p>
+                Hausgemachte Pide aus dem Laden. Ofenfrisch, kräftig belegt und
+                passend zum Teilen.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Ofenfrisch</span
+                ><span class="tag">Hausgemacht</span
+                ><span class="tag">Sucuk</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="menu-board" style="margin-top: 18px">
+          <div class="menu-list">
+            <h3>DÖN'R Gerichte</h3>
+            <div class="menu-item">
+              <div>
+                <b>DÖN'R im Brot</b
+                ><span>Döner im Brot mit Salat und Soße</span>
+              </div>
+              <strong>8,50 €</strong>
+            </div>
+            <div class="menu-item">
+              <div>
+                <b>DÖN'R im Brot Jumbo</b
+                ><span>Größere Portion mit Salat und Soße</span>
+              </div>
+              <strong>11,50 €</strong>
+            </div>
+            <div class="menu-item">
+              <div>
+                <b>Döner im Wrap</b><span>Gerollt mit Salat und Soße</span>
+              </div>
+              <strong>9,00 €</strong>
+            </div>
+            <div class="menu-item">
+              <div>
+                <b>DÖN'R Bowl</b><span>Döner mit Beilage, Salat und Soße</span>
+              </div>
+              <strong>14,00 €</strong>
+            </div>
+          </div>
+          <div class="menu-list">
+            <h3>Extras</h3>
+            <div class="menu-item">
+              <div>
+                <b>DÖN'R Box</b><span>Döner mit Pommes, Salat und Soße</span>
+              </div>
+              <strong>8,50 €</strong>
+            </div>
+            <div class="menu-item">
+              <div>
+                <b>Hausgemachte Soßen</b
+                ><span>Fünf Soßen, von mild bis würzig</span>
+              </div>
+              <strong></strong>
+            </div>
+            <div class="menu-item">
+              <div>
+                <b>Pide</b><span>Hausgemacht und direkt im Laden gebacken</span>
+              </div>
+              <strong></strong>
+            </div>
+            <div class="menu-item">
+              <div>
+                <b>Desserts</b><span>Süßer Abschluss nach dem Essen</span>
+              </div>
+              <strong></strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="instagram">
+        <div class="section-head">
+          <h2>Instagram Feed</h2>
+          <p>Aktuelle Reels, Food Shots und Eindrücke direkt aus dem Laden.</p>
+        </div>
+
+        <div class="social-layout">
+          <aside class="social-card">
+            <h3>@doenr_pinneberg</h3>
+            <p>
+              Reels, neue Produkte und aktuelle Eindrücke aus dem Laden direkt
+              eingebunden.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Döner</span>
+              <span class="tag">Pide</span>
+              <span class="tag">Pinneberg</span>
+              <span class="tag">Streetfood</span>
+            </div>
+            <div style="margin-top: 22px">
+              <a
+                class="btn btn-primary"
+                href="https://www.instagram.com/doenr_pinneberg/"
+                target="_blank"
+                rel="noreferrer"
+                >Instagram öffnen</a
+              >
+            </div>
+          </aside>
+
+          <div class="post-grid" aria-label="Instagram Einblicke">
+            <a
+              class="ig-card"
+              style="--post-bg: linear-gradient(135deg, #2a1a10, #1a1a1a)"
+              href="https://www.instagram.com/doenr_pinneberg/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <small>Instagram</small>
+              <b>Platzhalter für Reel oder Food Beitrag</b>
+            </a>
+            <a
+              class="ig-card"
+              style="--post-bg: linear-gradient(135deg, #2a1a10, #1a1a1a)"
+              href="https://www.instagram.com/doenr_pinneberg/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <small>Instagram</small>
+              <b>Platzhalter für Reel oder Food Beitrag</b>
+            </a>
+            <a
+              class="ig-card"
+              style="--post-bg: linear-gradient(135deg, #2a1a10, #1a1a1a)"
+              href="https://www.instagram.com/doenr_pinneberg/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <small>Instagram</small>
+              <b>Platzhalter für Reel oder Food Beitrag</b>
+            </a>
+            <a
+              class="ig-card"
+              style="--post-bg: linear-gradient(135deg, #2a1a10, #1a1a1a)"
+              href="https://www.instagram.com/doenr_pinneberg/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <small>Instagram</small>
+              <b>Platzhalter für Reel oder Food Beitrag</b>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="standort">
+        <div class="section-head">
+          <h2>Standort</h2>
+          <p>
+            Direkt in Pinneberg, gut erreichbar und mit allen wichtigen
+            Informationen auf einen Blick.
+          </p>
+        </div>
+
+        <div class="info-map">
+          <div class="info-card" id="kontakt">
+            <h3>Besuch planen</h3>
+            <div class="info-row">
+              <b>Adresse</b
+              ><span>DÖN'R<br />Berliner Str. 51<br />25421 Pinneberg</span>
+            </div>
+            <div class="info-row">
+              <b>Öffnungszeiten</b
+              ><span>Platzhalter für finale Öffnungszeiten</span>
+            </div>
+            <div class="info-row">
+              <b>Kontakt</b
+              ><span
+                >Telefon, WhatsApp oder Bestelllink können hier ergänzt
+                werden.</span
+              >
+            </div>
+            <div class="info-row">
+              <b>Vor Ort</b
+              ><span
+                >Sitzplätze, Takeaway, digitale Zahlung und weitere Infos können
+                hier ergänzt werden.</span
+              >
+            </div>
+            <div
+              style="
+                margin-top: 24px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+              "
+            >
+              <a
+                class="btn btn-primary"
+                href="https://www.google.com/maps/search/?api=1&query=D%C3%96N%27R%20Berliner%20Str.%2051%2025421%20Pinneberg"
+                target="_blank"
+                rel="noreferrer"
+                >Route öffnen</a
+              >
+              <a
+                class="btn btn-ghost"
+                href="https://www.instagram.com/doenr_pinneberg/"
+                target="_blank"
+                rel="noreferrer"
+                >Instagram</a
+              >
+            </div>
+          </div>
+          <div class="map-card">
+            <iframe
+              title="Karte DÖN'R Pinneberg"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=D%C3%96N%27R%20Berliner%20Str.%2051%2025421%20Pinneberg&output=embed"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <div class="cta">
+        <div>
+          <h2>Erster Eindruck, der verkauft.</h2>
+          <p>
+            Dieser Entwurf zeigt, wie DÖN'R aus Social Media, Standort und
+            Speisekarte eine moderne Website machen kann
+          </p>
+        </div>
+        <a
+          class="btn"
+          href="https://www.google.com/maps/search/?api=1&query=D%C3%96N%27R%20Berliner%20Str.%2051%2025421%20Pinneberg"
+          target="_blank"
+          rel="noreferrer"
+          >Jetzt Route planen</a
+        >
+      </div>
+    </main>
+
+    <footer>
+      <span>DÖN'R Pinneberg · Berliner Str. 51 · 25421 Pinneberg</span>
+    </footer>
+  </body>
+</html>

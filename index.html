@@ -644,6 +644,51 @@
           border-radius: 30px;
         }
       }
+      @media (max-width: 940px) {
+  .social-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .social-card {
+    position: relative;
+    top: auto;
+  }
+
+  .post-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .social-card {
+    padding: 22px;
+    border-radius: 26px;
+  }
+
+  .social-card h3 {
+    font-size: 34px;
+    word-break: break-word;
+  }
+
+  .post-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ig-card {
+    min-height: 180px;
+    border-radius: 22px;
+    padding: 16px;
+  }
+
+  .ig-card b {
+    font-size: 18px;
+  }
+
+  .ig-card small {
+    font-size: 11px;
+  }
+}
     </style>
   </head>
   <body>
